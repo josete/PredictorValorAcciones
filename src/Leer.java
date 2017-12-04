@@ -26,7 +26,7 @@ public class Leer {
 			Iterator<Row> iterator = datatypeSheet.iterator();
 			int currentRowNumber = 0;
 			while (iterator.hasNext()) {
-				double[] valores = new double[4];
+				double[] valores = new double[5];
 				int pos = 0;
 				if(currentRowNumber>0){
 	                Row currentRow = iterator.next();
@@ -36,13 +36,17 @@ public class Leer {
 	                    Cell currentCell = cellIterator.next();
 	                    currentCellNumber++;
 	                    if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
-	                    	if(currentCellNumber==2||currentCellNumber==3||currentCellNumber==5||currentCellNumber==6){
-	                    		valores[pos] = currentCell.getNumericCellValue();
+	                    	if(currentCellNumber==2||currentCellNumber==3||currentCellNumber==4||currentCellNumber==5||currentCellNumber==6){
+	                    		if(currentCellNumber==4){
+	                    			
+	                    		}else{
+	                    			valores[pos] = currentCell.getNumericCellValue();
+	                    		}
 	                    		pos++;
 	                    	}
 	                    }	
 	                }
-	                acciones.add(new Accion(valores[1],valores[2],valores[3],valores[0]));
+	                acciones.add(new Accion(valores[1],valores[3],valores[4],valores[0],valores[2]));
 				}else{
 					currentRowNumber++;
 				}
