@@ -1,0 +1,9 @@
+%Valores acciones BBVA
+@relation BBVA
+@attribute cierreAnterior Real
+@attribute apertura Real
+@attribute max Real
+@attribute min Real
+@attribute fluctuacion {'sube','baja'}
+@data
+7.0740,7.2,7.2060,7.0600,?

@@ -17,7 +17,7 @@ public class Leer {
 	
 	private static final String file = "historica.xls";
 	
-	public static void main(String args[]){
+	public Leer(){
 		ArrayList<Accion> acciones = new ArrayList<>();	
 		try{
 			FileInputStream excelFile = new FileInputStream(new File(file));
