@@ -10,11 +10,12 @@ public class Escribir {
 	 public void guardar(ArrayList<Accion> acciones) {
 	        FileWriter fichero = null;
 	        try {
-	            String cabecera = "%Valores acciones BBVA\n"
+	            String cabecera = "%Valores acciones BBVA\n@relation BBVA\n"
 	                    + "@attribute cierreAnterior Real\n"
 	                    + "@attribute apertura Real\n"
 	                    + "@attribute max Real\n"
 	                    + "@attribute min Real\n"
+                            + "@attribute fluctuacion {'sube','baja'}\n"
 	                    + "@data";
 	            PrintWriter pw = null;
 	            fichero = new FileWriter(fileName);

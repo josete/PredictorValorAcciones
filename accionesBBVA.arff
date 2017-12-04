@@ -3,7 +3,7 @@
 @attribute apertura Real
 @attribute min Real
 @attribute max Real
-@attribute fluctuacion {'sube', 'baja'}
+@attribute fluctuacion {'sube','baja'}
 @data
 6.414,6.368,6.334,6.414,'sube'
 6.375,6.331,6.326,6.395
