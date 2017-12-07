@@ -48,7 +48,6 @@ public class GenerarModelo {
 				ConverterUtils.DataSource source = new ConverterUtils.DataSource("test.arff");
 	            Instances data = source.getDataSet();
 	            data.setClassIndex(4);
-	            System.out.println(data.instance(0));
 	            return valoresAtributos[(int) clasificador.classifyInstance(data.instance(0))];
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

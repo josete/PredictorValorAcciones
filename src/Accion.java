@@ -8,7 +8,6 @@ public class Accion {
     String diferencial;
 	
 	public Accion(double apertura,double max,double min,double cierreActual,double diferencialDiaSiguiente){
-		System.out.println(diferencialDiaSiguiente);
 		this.apertura = apertura;
 		this.max = max;
 		this.min = min;
@@ -16,7 +15,7 @@ public class Accion {
 		if(diferencialDiaSiguiente>0){
 			diferencial = "sube"; 
 		}else{
-			diferencial = "alta";
+			diferencial = "baja";
 		}
 	}
 

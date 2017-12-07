@@ -17,6 +17,7 @@ public class Leer {
 	
 	private static final String file = "historica.xls";
 	
+	int n = 1;
 	public Leer(){
 		ArrayList<Accion> acciones = new ArrayList<>();	
 		try{
@@ -25,8 +26,9 @@ public class Leer {
 			Sheet datatypeSheet = workbook.getSheetAt(0);
 			Iterator<Row> iterator = datatypeSheet.iterator();
 			int currentRowNumber = 0;
+			double difSiguiente = 0;//Es siguiente porque el excel va desde los mas modernos a mas antiguos
 			while (iterator.hasNext()) {
-				double[] valores = new double[5];
+				double[] valores = new double[4];
 				int pos = 0;
 				if(currentRowNumber>0){
 	                Row currentRow = iterator.next();
@@ -38,15 +40,16 @@ public class Leer {
 	                    if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
 	                    	if(currentCellNumber==2||currentCellNumber==3||currentCellNumber==4||currentCellNumber==5||currentCellNumber==6){
 	                    		if(currentCellNumber==4){
-	                    			
+	                    			difSiguiente = currentCell.getNumericCellValue();
+	                    			System.out.println(n+" "+difSiguiente);n++;
 	                    		}else{
 	                    			valores[pos] = currentCell.getNumericCellValue();
+	                    			pos++;
 	                    		}
-	                    		pos++;
 	                    	}
 	                    }	
 	                }
-	                acciones.add(new Accion(valores[1],valores[3],valores[4],valores[0],valores[2]));
+	                acciones.add(new Accion(valores[1],valores[2],valores[3],valores[0],difSiguiente));
 				}else{
 					currentRowNumber++;
 				}
